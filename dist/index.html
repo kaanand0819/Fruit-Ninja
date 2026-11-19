@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111719">
+<title>Fruit Ninja · Camera Arcade</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <div class="brand"><span class="logo" aria-hidden="true">◒</span><div><strong>FRUIT NINJA</strong><small>CAMERA ARCADE</small></div></div>
+    <div id="camera-status" class="status" role="status">CAMERA OFF</div>
+  </header>
+  <section class="game" aria-label="Fruit Ninja game">
+    <div class="hud">
+      <div><small>SCORE</small><strong id="score">00</strong></div>
+      <div class="misses"><small>STRIKES</small><span id="misses" aria-label="0 of 3 strikes"><b>×</b><b>×</b><b>×</b></span></div>
+    </div>
+    <div class="arena">
+      <video id="camera" autoplay playsinline muted aria-hidden="true"></video>
+      <canvas id="field" width="960" height="600" aria-label="Fruit slicing playfield"></canvas>
+      <div class="overlay" id="overlay">
+        <div class="panel">
+          <p class="eyebrow" id="eyebrow">THE CAMERA ARCADE</p>
+          <h1 id="headline">Slice the <em>fruit.</em></h1>
+          <p id="message" role="status">Move your hand across the falling fruit. Each slice scores a point. Avoid bombs. Each hit costs 10 points and a strike. Three strikes end the round.</p>
+          <button class="primary" id="start">Enable camera &amp; play <span aria-hidden="true">↗</span></button>
+          <button class="text-button" id="practice">Practice with pointer</button>
+        </div>
+      </div>
+      <div class="arena-tag" aria-hidden="true">✦ &nbsp; THE SLICING FLOOR</div>
+    </div>
+    <div class="controls">
+      <fieldset>
+        <legend>FRUIT SPEED</legend>
+        <div class="choices">
+          <label><input type="radio" name="speed" value="chill"><span>Chill</span></label>
+          <label><input type="radio" name="speed" value="classic" checked><span>Classic</span></label>
+          <label><input type="radio" name="speed" value="blitz"><span>Blitz</span></label>
+        </div>
+      </fieldset>
+      <button id="end" class="end" hidden>End round</button>
+    </div>
+  </section>
+  <footer><span>Camera video stays on this device.</span><span>Keep your hand inside the frame.</span></footer>
+</main>
+<script type="module" src="app.mjs"></script>
+</body>
+</html>

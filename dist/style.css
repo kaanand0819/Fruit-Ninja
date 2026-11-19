@@ -1,0 +1,55 @@
+:root{color-scheme:dark;font-family:system-ui,sans-serif;background:#101617;color:#f8f5e8;--lime:#d8f575;--muted:#adb9b0;--line:#34413d}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:radial-gradient(ellipse at 52% 0%,#24332a 0,transparent 55%)}
+main{width:min(1030px,calc(100% - 36px));margin:auto;padding:32px 0}
+header,.hud,.controls,footer{display:flex;align-items:center;justify-content:space-between;gap:16px}
+header{margin-bottom:22px}
+.brand{display:flex;align-items:center;gap:12px;letter-spacing:.08em}
+.brand strong,.brand small{display:block}
+small,legend,.eyebrow,.status,.arena-tag{font-size:11px;font-weight:750;letter-spacing:.15em}
+small,legend{color:var(--muted)}
+.brand small{margin-top:3px}
+.logo{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:var(--lime);color:#192017;font-size:25px;transform:rotate(-8deg)}
+.status{display:flex;align-items:center;gap:8px;color:var(--muted);text-align:right}
+.status::before{content:"";width:7px;height:7px;border-radius:50%;background:#78867c;flex:none}
+.status.live::before{background:var(--lime);box-shadow:0 0 10px var(--lime)}
+.game{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#1b2423;box-shadow:0 24px 70px #0005}
+.hud,.controls{padding:13px 22px}
+.hud strong{display:block;font-size:34px;line-height:1.1;font-variant-numeric:tabular-nums}
+.misses{text-align:right}
+.misses span{display:flex;gap:6px;margin-top:4px}
+.misses b{display:grid;place-items:center;width:31px;height:31px;border:1px solid var(--line);border-radius:8px;color:#7e8d85;font-size:24px;line-height:1}
+.misses b.used{background:#492b30;color:#ff8c87;border-color:#985354}
+.arena{position:relative;aspect-ratio:8/5;min-height:370px;overflow:hidden;isolation:isolate;border-block:1px solid var(--line);background:radial-gradient(ellipse at 50% 50%,#26382e,#101918 73%)}
+.arena::before{content:"";position:absolute;inset:0;background:linear-gradient(#a4c3a914 1px,transparent 1px),linear-gradient(90deg,#a4c3a914 1px,transparent 1px);background-size:38px 38px;mask-image:radial-gradient(ellipse,#000,transparent 85%);pointer-events:none}
+video,canvas,.overlay{position:absolute;inset:0;width:100%;height:100%}
+video{visibility:hidden;object-fit:cover;transform:scaleX(-1);filter:brightness(.69) saturate(.83)}
+video.live{visibility:visible}
+canvas{touch-action:none}
+.overlay{display:grid;place-items:center;padding:14px}
+.panel{position:relative;width:min(100%,475px);padding:clamp(20px,4vw,40px);text-align:center;border:1px solid #506050;border-radius:22px;background:#131d1bed;box-shadow:0 16px 52px #0005}
+.eyebrow{color:var(--lime);margin:0 0 10px}
+h1{margin:0;line-height:1.02;font-size:clamp(38px,7vw,70px);letter-spacing:-.07em}
+h1 em{color:var(--lime);font-style:normal}
+#message{margin:16px auto 22px;line-height:1.55;color:#c2cec2;max-width:34ch;font-size:15px}
+button{font:inherit;cursor:pointer}
+button:disabled{cursor:wait;opacity:.65}
+.primary,.end{border-radius:10px;padding:11px 16px;font-weight:750}
+.primary{color:#1b2412;background:var(--lime);border:0}
+.primary:hover{background:#edffa9}
+.primary span{margin-left:4px}
+.text-button{display:block;margin:12px auto 0;padding:3px 8px;background:none;border:0;color:var(--muted);text-decoration:underline;text-underline-offset:4px;font-size:13px}
+.arena-tag{position:absolute;bottom:12px;left:16px;color:#c0cdba;pointer-events:none}
+fieldset{border:0;margin:0;padding:0}
+legend{padding:0;margin-bottom:7px}
+.choices{display:flex;gap:4px;border:1px solid var(--line);background:#141d1c;border-radius:10px;padding:3px}
+.choices label{position:relative;cursor:pointer}
+.choices input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.choices span{display:block;padding:6px 10px;border-radius:6px;color:var(--muted);font-size:13px;font-weight:700}
+.choices input:checked + span{background:#394835;color:#ebf7d2}
+.choices input:disabled{cursor:default}
+:focus-visible,.choices input:focus-visible + span{outline:2px solid var(--lime);outline-offset:3px}
+.end{background:transparent;border:1px solid var(--line);color:#f8f5e8;font-size:13px}
+footer{padding:14px 2px;color:var(--muted);font-size:12px;flex-wrap:wrap}
+@media(max-width:460px){main{width:calc(100% - 20px);padding:18px 0}.hud,.controls{padding-inline:12px}.arena-tag{display:none}}
